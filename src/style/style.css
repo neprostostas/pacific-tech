@@ -41,6 +41,10 @@ html.no-scroll {
     height: 100%;
 }
 
+body {
+    background: url("../assets/img/bg.png"), lightgray 0% 0% / 100px 100px repeat;
+}
+
 hr {
     border: none;
     margin: 0;
@@ -60,29 +64,28 @@ a:hover {
 }
 
 button {
-    border: none;
+    border: 2px solid var(--color-white, #E8E8E8);
+    border-radius: 40px;
+    padding: 10px 85px;
+    background: var(--color-white, #E8E8E8);
+    color: var(--color-primary, #232323);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: all ease-in-out 0.3s;
+}
+
+button:hover {
+    border-radius: 40px;
+    border: 2px solid var(--color-white, #E8E8E8);
+    color: var(--color-white, #E8E8E8);
+    background: var(--gradient-blue, radial-gradient(135.78% 135.78% at -5.98% 11.82%, #000 0%, #142743 62.53%, #38618A 100%));
 }
 
 .container {
     max-width: 1680px;
     margin: 0 auto;
 }
-
-/* HEADER */
-
-.header-outer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-
-    background-color: var(--gradient-blue);
-}
-
-.header-inner {
-    background-color: red;
-}
-
-/* FOOTER */
-

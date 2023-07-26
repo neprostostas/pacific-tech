@@ -1,6 +1,6 @@
 <template>
 
-  <h2>ABOUT US</h2>
+  <h2>Projects</h2>
 
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from "vue"
 
 export default defineComponent({
-  name: 'AboutUs',
+  name: 'Projects',
   setup() {
 
 

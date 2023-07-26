@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/pages/Home";
-import AboutUs from "@/pages/AboutUs";
+import Speciality from "@/pages/Speciality";
+import Advantages from "@/pages/Advantages";
+import Services from "@/pages/Services";
+import Projects from "@/pages/Projects";
 
 function redirect() {
   return '/'
@@ -14,9 +17,24 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about-us",
-    name: "AboutUs",
-    component: AboutUs,
+    path: "/speciality",
+    name: "Speciality",
+    component: Speciality,
+  },
+  {
+    path: "/advantages",
+    name: "Advantages",
+    component: Advantages,
+  },
+  {
+    path: "/services",
+    name: "Services",
+    component: Services,
+  },
+  {
+    path: "/projects",
+    name: "Projects",
+    component: Projects,
   },
 ];
 
