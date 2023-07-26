@@ -2,7 +2,7 @@
 
     <footer>
       <div class="footer-outer">
-        <div class="footer-inner">
+        <div class="footer-inner container">
 
           Footer
 

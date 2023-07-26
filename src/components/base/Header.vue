@@ -2,7 +2,7 @@
 
     <header>
       <div class="header-outer">
-        <div class="header-inner">
+        <div class="header-inner container">
 
           Header
 
