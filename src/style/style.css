@@ -79,7 +79,6 @@ button {
 }
 
 button:hover {
-    border-radius: 40px;
     border: 2px solid var(--color-white, #E8E8E8);
     color: var(--color-white, #E8E8E8);
     background: var(--gradient-blue, radial-gradient(135.78% 135.78% at -5.98% 11.82%, #000 0%, #142743 62.53%, #38618A 100%));
@@ -88,4 +87,37 @@ button:hover {
 .container {
     max-width: 1680px;
     margin: 0 auto;
+}
+
+.placeholder {
+    height: 700px;
+}
+
+.container-padding {
+    padding: 75px 90px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.title-test {
+    color: var(--color-primary, #232323);
+    text-align: center;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 920px) {
+    .container-padding {
+        padding: 40px 32px;
+    }
+
+    button {
+        background: var(--color-primary, #232323);
+        border: 2px solid var(--color-primary, #232323);
+        color: var(--color-white, #E8E8E8);
+    }
+
 }

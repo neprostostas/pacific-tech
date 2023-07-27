@@ -1,6 +1,9 @@
 <template>
 
-  <h2>Advantages</h2>
+  <div class="container-padding">
+    <div class="placeholder"></div>
+    <h2 class="title-test">Advantages</h2>
+  </div>
 
 </template>
 

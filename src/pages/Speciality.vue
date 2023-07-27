@@ -1,6 +1,9 @@
 <template>
 
-  <h2>Speciality</h2>
+  <div class="container-padding">
+    <div class="placeholder"></div>
+    <h2 class="title-test">Speciality</h2>
+  </div>
 
 </template>
 

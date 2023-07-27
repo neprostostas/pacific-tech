@@ -78,4 +78,24 @@ export default defineComponent({
   margin: 0 auto;
 }
 
+@media screen and (max-width: 920px) {
+
+  .video-content {
+    max-width: 310px;
+  }
+
+  .video-block {
+    margin-top: 40px;
+  }
+
+  .video-content h3 {
+    font-size: 26px;
+  }
+
+  .video-content hr {
+    display: none;
+  }
+
+}
+
 </style>

@@ -6,7 +6,7 @@
 
           <nav class="navbar-desktop-footer">
             <router-link to="/">
-              <img class="logo-desktop-footer" src="@/assets/img/logo-footer.png" alt="logo-footer">
+              <img class="logo-desktop-footer" src="@/assets/img/logo-footer.svg" alt="logo-footer">
             </router-link>
             <ul class="nav-part">
               <li>
@@ -52,7 +52,8 @@ export default defineComponent({
 }
 
 .footer-inner {
-  padding: 75px 20px;
+  padding: 75px 90px;
+  max-width: 1500px;
 }
 
 .navbar-desktop-footer {
@@ -62,6 +63,7 @@ export default defineComponent({
   display: grid;
   grid-template-columns: repeat(2, auto);
   align-items: center;
+  gap: 20px;
 }
 
 .nav-part {
@@ -85,6 +87,42 @@ export default defineComponent({
   width: 100%;
   max-width: 120px;
   height: 61px;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .navbar-desktop-footer {
+    justify-content: stretch;
+  }
+
+  .nav-part {
+    justify-items: unset;
+    justify-content: unset;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px 20px;
+  }
+
+}
+
+@media screen and (max-width: 920px) {
+
+  .navbar-desktop-footer {
+    justify-content: space-between;
+  }
+
+  .footer-inner {
+    padding: 40px 32px;
+  }
+
+  .nav-part li a {
+    font-size: 14px;
+  }
+
+  .logo-desktop-footer {
+    max-width: 90px;
+    height: 45px;
+  }
+
 }
 
 </style>

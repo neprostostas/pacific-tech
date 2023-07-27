@@ -1,6 +1,9 @@
 <template>
 
-  <h2>Services</h2>
+  <div class="container-padding">
+    <div class="placeholder"></div>
+    <h2 class="title-test">Services</h2>
+  </div>
 
 </template>
 

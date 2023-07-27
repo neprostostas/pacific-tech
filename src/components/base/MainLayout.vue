@@ -44,12 +44,13 @@ export default defineComponent({
   right: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .hr-wrapper hr {
   background: linear-gradient(225deg, rgba(35, 35, 35, 0.00) 0%, #232323 100%);
   transform: rotate(180deg);
-  height: 120%;
+  height: 60%;
   width: 1px;
   position: absolute;
   z-index: 12;
@@ -57,11 +58,21 @@ export default defineComponent({
 }
 
 .hr-wrapper hr:first-child {
-  left: 0;
+  left: 45px;
 }
 
 .hr-wrapper hr:last-child {
-  right: 0;
+  right: 45px;
+}
+
+@media screen and (max-width: 920px) {
+  .hr-wrapper hr:first-child {
+    left: 16px;
+  }
+
+  .hr-wrapper hr:last-child {
+    right: 16px;
+  }
 }
 
 </style>

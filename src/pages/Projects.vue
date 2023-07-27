@@ -1,6 +1,9 @@
 <template>
 
-  <h2>Projects</h2>
+  <div class="container-padding">
+    <div class="placeholder"></div>
+    <h2 class="title-test">Projects</h2>
+  </div>
 
 </template>
 
