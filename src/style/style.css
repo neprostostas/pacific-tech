@@ -223,4 +223,19 @@ p.text3 {
         color: var(--color-white, #E8E8E8);
     }
 
+    /* Heading 1 */
+    h2.heading-1 {
+        font-size: 38px;
+    }
+
+    /* Heading 2 */
+    h2.heading-2 {
+        font-size: 30px;
+    }
+
+    /* Heading 3 */
+    h3 {
+        font-size: 18px;
+    }
+
 }
