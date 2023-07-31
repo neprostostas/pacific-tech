@@ -7,7 +7,7 @@
         <h2 class="heading-2 color-secondary pl-225">WHAT DO WE DO</h2>
       </div>
       <div class="right-part">
-        <h3 class="w-840">Welcome to PacificTech Solutions - Your Gateway to Cutting-Edge Tech Solutions! At PacificTech Solutions, we are a dynamic team of tech enthusiasts, dedicated to transforming your digital aspirations into reality. With a passion for innovation and a focus on excellence, we specialize in three core areas:</h3>
+        <h3 class="w-840 color-primary">Welcome to PacificTech Solutions - Your Gateway to Cutting-Edge Tech Solutions! At PacificTech Solutions, we are a dynamic team of tech enthusiasts, dedicated to transforming your digital aspirations into reality. With a passion for innovation and a focus on excellence, we specialize in three core areas:</h3>
       </div>
     </div>
 
