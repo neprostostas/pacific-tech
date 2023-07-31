@@ -160,8 +160,7 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 }
 
 .advantages {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 @media screen and (max-width: 1450px) {
@@ -235,7 +234,6 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 }
 
 .advantages {
-  margin-top: 85px;
   margin-bottom: 85px;
 }
 
