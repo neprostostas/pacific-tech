@@ -226,6 +226,10 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 
 @media screen and (max-width: 1180px) {
 
+.bottom-wrap {
+  padding: 0;
+}
+
 .top-block {
   grid-template-columns: auto;
   justify-content: unset;
