@@ -108,6 +108,10 @@ export default defineComponent({
   transform: translateY(-10px);
 }
 
+.nav-trigger {
+  cursor: pointer;
+}
+
 .navbar-desktop ul {
   max-width: 1080px;
   margin: 0 auto;
