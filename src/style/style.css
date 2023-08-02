@@ -69,7 +69,6 @@ html {
 html.no-scroll {
     overflow: hidden;
     height: 100%;
-    overscroll-behavior: none;
 }
 
 body {

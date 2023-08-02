@@ -24,7 +24,7 @@
 
   </nav>
 
-  <nav class="navbar-mobile">
+  <nav class="navbar-mobile" ref="navBarMobileRef">
 
     <router-link to="/" class="mobile" @click="isMobileMenuOpen = false">
       <img class="logo-mobile" src="@/assets/img/logo.svg" alt="logo">
@@ -69,6 +69,8 @@ export default defineComponent({
   name: 'NavBar',
   setup() {
 
+    const navBarMobileRef = ref(null);
+
     // Define a reactive variable to track the state of the mobile menu
     const isMobileMenuOpen = ref(false);
 
@@ -77,18 +79,28 @@ export default defineComponent({
       isMobileMenuOpen.value = !isMobileMenuOpen.value;
     };
 
+    // helper function to run preventDefault
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+
     // Watch the isMobileMenuOpen variable and add/remove the no-scroll class accordingly
     watch(isMobileMenuOpen, (newValue) => {
       if (newValue) {
         document.documentElement.classList.add('no-scroll');
+        navBarMobileRef.value.addEventListener('pointermove', preventDefault);
+        navBarMobileRef.value.addEventListener('touchmove', preventDefault);
       } else {
         document.documentElement.classList.remove('no-scroll');
+        navBarMobileRef.value.removeEventListener('pointermove', preventDefault);
+        navBarMobileRef.value.removeEventListener('touchmove', preventDefault);
       }
     });
 
     return {
       isMobileMenuOpen,
-      toggleMobileMenu
+      toggleMobileMenu,
+      navBarMobileRef
     }
   }
 
