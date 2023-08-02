@@ -57,7 +57,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Advantages",
+  name: "OurAdvantages",
   setup() {
 
     return {
@@ -137,17 +137,13 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
   width: 100%;
 }
 
-.pl-225 {
-  padding-left: 225px;
-}
-
 .top-block {
   display: grid;
   grid-template-columns: repeat(2, auto);
   align-items: start;
   justify-content: space-between;
   gap: 50px;
-  padding-bottom: 100px;
+  padding: 0 20px 100px;
 }
 
 .bottom-block hr {
@@ -233,7 +229,7 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 .top-block {
   grid-template-columns: auto;
   justify-content: unset;
-  padding-bottom: 50px;
+  padding: 0 0 50px;
   gap: 25px;
 }
 
@@ -254,7 +250,6 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
     display: grid;
     justify-items: center;
   }
-
 
   .bottom-block .block:nth-child(1) {
     grid-column-start: unset;
@@ -304,22 +299,12 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
     margin-right: 0;
   }
 
-  .pl-225 {
-    padding-left: 150px;
-  }
-
 }
 
 @media screen and (max-width: 500px) {
+
   .block:nth-child(1) .text-part {
     height: 307px;
-  }
-}
-
-@media screen and (max-width: 460px) {
-
-  .pl-225 {
-    padding-left: 90px;
   }
 
 }
@@ -328,10 +313,6 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 
   .block:is(:nth-child(2), :nth-child(4)) .text-part {
     height: 307px;
-  }
-
-  .pl-225 {
-    padding-left: 70px;
   }
 
 }

@@ -4,7 +4,7 @@
     <div class="top-block">
       <div class="left-part">
         <h2 class="heading-1">OUR SERVICES</h2>
-        <h2 class="heading-2 color-secondary grid-left">WHAT DO WE OFFER</h2>
+        <h2 class="heading-2 color-secondary pl-225">WHAT DO WE OFFER</h2>
       </div>
       <div class="right-part">
         <FAQComponent :faq="FAQ_data"/>
@@ -173,19 +173,27 @@ export default defineComponent({
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
   gap: 30px;
-}
-
-.left-part {
-  width: 430px;
-}
-
-.grid-left {
-  display: grid;
-  justify-content: end;
+  padding: 0 20px 0;
 }
 
 .services {
   margin-bottom: 200px;
+}
+
+@media screen and (max-width: 1335px) {
+
+  .pl-225 {
+    padding-left: 160px;
+  }
+
+}
+
+@media screen and (max-width: 1205px) {
+
+  .pl-225 {
+    padding-left: 130px;
+  }
+
 }
 
 @media screen and (max-width: 1180px) {
@@ -194,37 +202,53 @@ export default defineComponent({
     margin-bottom: 85px;
   }
 
+  .top-block {
+    padding: 0;
+  }
+
+}
+
+@media screen and (max-width: 1105px) {
+
+  .pl-225 {
+    padding-left: 90px;
+  }
+
+}
+
+@media screen and (max-width: 1025px) {
+
+  .pl-225 {
+    padding-left: 35px;
+  }
+
 }
 
 @media screen and (max-width: 920px) {
+
+  .pl-225 {
+    padding-left: 150px;
+  }
 
   .top-block {
     grid-template-columns: auto;
     align-items: unset;
   }
 
-  .left-part {
-    width: 360px;
+}
+
+@media screen and (max-width: 495px) {
+
+  .pl-225 {
+    padding-left: 90px;
   }
 
 }
 
-@media screen and (max-width: 445px) {
+@media screen and (max-width: 435px) {
 
-  .left-part {
-    width: 330px;
-  }
-
-}
-
-@media screen and (max-width: 385px) {
-
-  .left-part {
-    width: unset;
-  }
-
-  .grid-left {
-    justify-content: unset;
+  .pl-225 {
+    padding-left: 30px;
   }
 
 }

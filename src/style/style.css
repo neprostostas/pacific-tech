@@ -63,15 +63,17 @@
 html {
     font-family: 'SF Pro Display', sans-serif;
     overflow-x: hidden;
+    overscroll-behavior: none;
 }
 
 html.no-scroll {
     overflow: hidden;
     height: 100%;
+    position: fixed;
 }
 
 body {
-    background: url("../assets/img/bg.png"), lightgray 0% 0% / 100px 100px repeat;
+    background: var(--gradient-gray, linear-gradient(90deg, #D8D8D8 0%, #ECEDED 56.13%, #EDEDED 100%));
 }
 
 hr {
@@ -126,6 +128,11 @@ button:hover {
     padding: 0 90px;
     max-width: 1500px;
     margin: 0 auto;
+}
+
+.pl-225 {
+    padding-left: 225px;
+    padding-top: 20px;
 }
 
 .pre-wrap {
@@ -218,6 +225,12 @@ p.text3 {
 }
 
 @media screen and (max-width: 920px) {
+
+    .pl-225 {
+        padding-left: 150px;
+        padding-top: 5px;
+    }
+
     .container-padding {
         padding: 0 32px;
     }
@@ -241,6 +254,30 @@ p.text3 {
     /* Heading 3 */
     h3 {
         font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+
+    .pl-225 {
+        padding-left: 90px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+
+    .pl-225 {
+        padding-left: 70px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    button {
+        padding: 10px 75px;
     }
 
 }

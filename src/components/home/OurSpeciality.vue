@@ -1,5 +1,5 @@
 <template>
-  <div class="container-padding our-speciality">
+  <div class="container-padding speciality">
 
     <div class="top-block">
       <div class="left-part">
@@ -115,7 +115,6 @@ export default defineComponent({
         gap1.value = "0";
         gap2.value = "20px";
         gap3.value = "0";
-
       }
       else if (blockNumber === 3) {
         bottomBlockColumns.value = "1fr 1fr 2fr";
@@ -220,20 +219,16 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
   width: 100%;
 }
 
-.pl-225 {
-  padding-left: 225px;
-}
-
 .top-block {
   display: grid;
   grid-template-columns: repeat(2, auto);
   align-items: start;
   justify-content: space-between;
   gap: 50px;
-  padding-bottom: 100px;
+  padding: 0 20px 100px;
 }
 
-.our-speciality {
+.speciality {
   margin-top: 200px;
   margin-bottom: 200px;
 }
@@ -339,11 +334,11 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
   .top-block {
     grid-template-columns: auto;
     justify-content: unset;
-    padding-bottom: 50px;
+    padding: 0 0 50px;
     gap: 25px;
   }
 
-  .our-speciality {
+  .speciality {
     margin-top: 85px;
     margin-bottom: 85px;
   }
@@ -354,34 +349,10 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
 }
 
-@media screen and (max-width: 920px) {
-
-  .pl-225 {
-    padding-left: 150px;
-  }
-
-}
-
-@media screen and (max-width: 460px) {
-
-  .pl-225 {
-    padding-left: 90px;
-  }
-
-}
-
 @media screen and (max-width: 425px) {
 
   .bottom-wrap.mobile > div > div:nth-child(3) > .text-part {
     grid-template-rows: 150px 1fr;
-  }
-}
-
-
-@media screen and (max-width: 390px) {
-
-  .pl-225 {
-    padding-left: 70px;
   }
 
 }

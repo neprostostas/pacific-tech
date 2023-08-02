@@ -31,7 +31,7 @@ export default defineComponent({
 <style scoped>
 
 .video-block {
-  margin-top: 80px;
+  margin-top: 120px;
 
   position: relative;
   z-index: 2;
@@ -85,7 +85,7 @@ export default defineComponent({
   }
 
   .video-block {
-    margin-top: 40px;
+    margin-top: 53px;
   }
 
   .video-content h3 {
