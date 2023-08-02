@@ -26,7 +26,7 @@
 
   <nav class="navbar-mobile">
 
-    <router-link to="/" class="mobile">
+    <router-link to="/" class="mobile" @click="isMobileMenuOpen = false">
       <img class="logo-mobile" src="@/assets/img/logo.svg" alt="logo">
     </router-link>
 
