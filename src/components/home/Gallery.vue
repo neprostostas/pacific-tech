@@ -74,7 +74,7 @@ export default defineComponent({
           const { bottom } = galleryMobileElement.getBoundingClientRect();
           const scrollPosition = window.scrollY + bottom + 105;
           window.scrollTo({ top: scrollPosition, behavior: "smooth" });
-        }, 1);
+        }, 100);
       }
     };
 
