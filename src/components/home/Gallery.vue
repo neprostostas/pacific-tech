@@ -35,7 +35,6 @@
       </template>
       <button class="view-more" v-if="!showAll" @click="showAllProjects">VIEW MORE</button>
     </div>
-
 </template>
 
 <script>
