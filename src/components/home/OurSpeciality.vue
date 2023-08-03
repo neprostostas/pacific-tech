@@ -252,7 +252,7 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 }
 
 .bottom-wrap.mobile .block {
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   gap: 25px;
   padding: 20px 0;
   border-left: none;
