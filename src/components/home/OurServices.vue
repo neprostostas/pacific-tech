@@ -234,4 +234,12 @@ export default defineComponent({
 
 }
 
+@media screen and (max-width: 455px) {
+
+  .pl-225 {
+    padding-left: 0;
+  }
+
+}
+
 </style>

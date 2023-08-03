@@ -285,8 +285,12 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 }
 
 .bottom-wrap.mobile .block img {
-  height: 100%;
+  max-width: 990px;
+  max-height: 990px;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 1825px) {
