@@ -287,13 +287,12 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 }
 
 .bottom-wrap.mobile .block img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-width: 305px;
-  min-height: 305px;
   object-fit: cover;
   border-radius: 5px;
+  height: 700px;
+  width: 700px;
+  display: block;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1825px) {
@@ -373,12 +372,26 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
 }
 
+@media screen and (max-width: 820px) {
+  .bottom-wrap.mobile .block img {
+    height: 500px;
+    width: 500px;
+  }
+}
+
 @media screen and (max-width: 680px) {
 
   .bottom-wrap.mobile .text-part {
     height: 200px;
   }
 
+}
+
+@media screen and (max-width: 595px) {
+  .bottom-wrap.mobile .block img {
+    height: 305px;
+    width: 305px;
+  }
 }
 
 @media screen and (max-width: 547px) {
@@ -406,6 +419,14 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
   .bottom-wrap.mobile > div > div:nth-child(3) > .text-part {
     height: 350px;
   }
+
+  .bottom-wrap.mobile .block img {
+    height: 100%;
+    width: 100%;
+    display: unset;
+    margin: unset;
+  }
+
 
 }
 
