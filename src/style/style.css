@@ -237,6 +237,7 @@ p.text3 {
     }
 
     button {
+        width: 100%;
         background: var(--color-primary, #232323);
         border: 2px solid var(--color-primary, #232323);
         color: var(--color-white, #E8E8E8);
