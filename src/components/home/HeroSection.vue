@@ -4,7 +4,7 @@
 
     <video class="video" playsinline autoplay loop muted src="@/assets/video/hero-video.webm" type="video/webm"></video>
     <div class="video-content">
-      <h3>Websites. E-commerce. Apps. Identica. Design Support.</h3>
+      <h2 class="heading-2 color-white">Websites. E-commerce. Apps. Identica. Design Support.</h2>
       <button class="margin-auto">HIRE US</button>
       <hr>
     </div>
@@ -54,14 +54,8 @@ export default defineComponent({
   transform: translate(-50%,-50%);
 }
 
-.video-content h3 {
-  color: var(--color-white, #E8E8E8);
+.video-content h2 {
   text-align: center;
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-
   margin-bottom: 55px;
 }
 
@@ -86,10 +80,6 @@ export default defineComponent({
 
   .video-block {
     margin-top: 53px;
-  }
-
-  .video-content h3 {
-    font-size: 26px;
   }
 
   .video-content hr {

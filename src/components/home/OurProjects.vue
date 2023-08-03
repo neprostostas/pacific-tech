@@ -1,15 +1,15 @@
 <template>
-  <div class="container-padding projects">
-    <div class="projects-wrapper">
+  <div class="container projects">
 
-      <div class="top-block">
+    <div class="top-block">
+      <div class="left-part">
         <h2 class="heading-1">OUR PROJECTS</h2>
         <h2 class="heading-2 color-secondary pl-225">WHAT WE MADE</h2>
       </div>
-
-      <Gallery :projects="projects" />
-
     </div>
+
+    <Gallery :projects="projects" />
+
   </div>
 </template>
 
@@ -97,10 +97,8 @@ export default defineComponent({
 
 .top-block {
   padding-bottom: 100px;
-}
-
-.projects-wrapper {
-  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .projects {
@@ -109,16 +107,20 @@ export default defineComponent({
 
 @media screen and (max-width: 1180px) {
 
-  .projects-wrapper {
-    padding: 0;
-  }
-
   .projects {
     margin-bottom: 85px;
   }
 
   .top-block {
     padding-bottom: 45px;
+  }
+
+}
+
+@media screen and (max-width: 920px) {
+
+  .top-block {
+    grid-template-columns: auto;
   }
 
 }

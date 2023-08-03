@@ -71,6 +71,11 @@ html.no-scroll {
     height: 100%;
 }
 
+html,
+body {
+    scrollbar-gutter: stable;
+}
+
 body {
     background: var(--gradient-gray, linear-gradient(90deg, #D8D8D8 0%, #ECEDED 56.13%, #EDEDED 100%));
 }
@@ -87,10 +92,6 @@ button, a {
 a {
     color: var(--color-black-pure, #000000);
     text-decoration: unset;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 button {
@@ -114,113 +115,114 @@ button:hover {
     background: var(--gradient-blue, radial-gradient(135.78% 135.78% at -5.98% 11.82%, #000 0%, #142743 62.53%, #38618A 100%));
 }
 
-.container {
-    max-width: 1680px;
-    margin: 0 auto;
-}
-
 .placeholder {
     height: 700px;
 }
 
-.container-padding {
-    padding: 0 90px;
-    max-width: 1500px;
+.container {
+    padding: 0 6.25vw;
+    max-width: 1680px;
     margin: 0 auto;
 }
 
 .pl-225 {
     padding-left: 225px;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .pre-wrap {
     white-space: pre-wrap
 }
 
-.title-test {
-    color: var(--color-primary, #232323);
-    text-align: center;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
 /* Big Heading */
 h2.big-heading {
     color: var(--color-black-pure, #000);
     font-feature-settings: 'clig' off, 'liga' off;
-    font-size: 100px;
     font-style: normal;
     font-weight: 700;
-    line-height: 112px;
     text-transform: uppercase;
+    /*font-size: 100px;*/
+    /*line-height: 112px;*/
+    font-size: clamp(44px, 5.208vw, 100px);
+    line-height: 112%;
 }
 
 /* Heading 1 */
 h2.heading-1 {
     color: var(--color-black-pure, #000);
     font-feature-settings: 'clig' off, 'liga' off;
-    font-size: 48px;
     font-style: normal;
     font-weight: 700;
-    line-height: 55px;
+    /*font-size: 48px;*/
+    /*line-height: 55px;*/
+    font-size: clamp(38px, 2.5vw, 48px);
+    line-height: 144%;
 }
 
 /* Heading 2 */
 h2.heading-2 {
     color: var(--color-black-pure, #000);
-    font-size: 34px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    /*font-size: 34px;*/
+    font-size: clamp(28px, 1.77vw, 34px);
 }
 
 /* Heading 3 */
 h3 {
     color: var(--color-black-pure, #000);
-    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    /*font-size: 24px;*/
+    font-size: clamp(18px, 1.25vw, 24px);
 }
 
 /* Text */
 p {
     color: var(--color-black-pure, #000);
-    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    font-size: 18px; /* static size */
+}
+
+/* Button */
+p.button {
+    color: var(--color-black-pure, #000);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 24px; /* static size */
 }
 
 /* Text Medium */
 p.medium {
     color: var(--color-black-pure, #000);
-    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-size: 18px; /* static size */
 }
 
 /* Text 2 */
 p.text2 {
     color: var(--color-black-pure, #000);
-    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    font-size: 16px; /* static size */
 }
 
 /* Text 3 */
 p.text3 {
     color: var(--color-black-pure, #000);
-    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    font-size: 14px; /* static size */
 }
 
 @media screen and (max-width: 920px) {
@@ -230,8 +232,8 @@ p.text3 {
         padding-top: 5px;
     }
 
-    .container-padding {
-        padding: 0 32px;
+    .container {
+        padding: 0 4.267vw;
     }
 
     button {
@@ -240,35 +242,15 @@ p.text3 {
         color: var(--color-white, #E8E8E8);
     }
 
-    /* Heading 1 */
-    h2.heading-1 {
-        font-size: 38px;
-    }
-
-    /* Heading 2 */
-    h2.heading-2 {
-        font-size: 30px;
-    }
-
-    /* Heading 3 */
-    h3 {
-        font-size: 18px;
-    }
-
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 455px) {
 
     .pl-225 {
-        padding-left: 90px;
-    }
-
-}
-
-@media screen and (max-width: 390px) {
-
-    .pl-225 {
-        padding-left: 70px;
+        padding-left: 0;
+        display: block;
+        margin-left: auto;
+        text-align: right;
     }
 
 }

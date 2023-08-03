@@ -4,6 +4,7 @@ import Speciality from "@/pages/Speciality";
 import Advantages from "@/pages/Advantages";
 import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
+import LetsTalk from "@/pages/LetsTalk";
 
 function redirect() {
   return '/'
@@ -35,6 +36,11 @@ const routes = [
     path: "/projects",
     name: "Projects",
     component: Projects,
+  },
+  {
+    path: "/lets-talk",
+    name: "LetsTalk",
+    component: LetsTalk,
   },
 ];
 

@@ -1,29 +1,20 @@
 <template>
-
   <nav class="navbar-desktop">
-
     <ul>
-      <li>
-        <router-link to="/speciality">SPECIALTY</router-link>
-      </li>
-      <li>
-        <router-link to="/advantages">ADVANTAGES</router-link>
-      </li>
-      <li>
-        <router-link to="/">
-          <img class="logo-desktop" src="@/assets/img/logo.svg" alt="logo">
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/services">SERVICES</router-link>
-      </li>
-      <li>
-        <router-link to="/projects">PROJECTS</router-link>
+      <li v-for="(item, index) in navItems" :key="index">
+        <template v-if="item.type === 'link'">
+          <router-link :to="item.link" @click="isMobileMenuOpen = false">
+            <p class="button color-primary">{{ item.text }}</p>
+          </router-link>
+        </template>
+        <template v-else-if="item.type === 'logo'">
+          <router-link to="/">
+            <img class="logo-desktop" src="@/assets/img/logo.svg" alt="logo">
+          </router-link>
+        </template>
       </li>
     </ul>
-
   </nav>
-
   <nav class="navbar-mobile" ref="navBarMobileRef">
 
     <router-link to="/" class="mobile" @click="isMobileMenuOpen = false">
@@ -43,23 +34,19 @@
 
     <transition name="slide">
       <ul v-if="isMobileMenuOpen" class="list-mobile">
-        <li>
-          <router-link @click="isMobileMenuOpen = false" class="mobile-page" to="/speciality">SPECIALTY</router-link>
-        </li>
-        <li>
-          <router-link @click="isMobileMenuOpen = false" class="mobile-page" to="/advantages">ADVANTAGES</router-link>
-        </li>
-        <li>
-          <router-link @click="isMobileMenuOpen = false" class="mobile-page" to="/services">SERVICES</router-link>
-        </li>
-        <li>
-          <router-link @click="isMobileMenuOpen = false" class="mobile-page" to="/projects">PROJECTS</router-link>
-        </li>
+        <template v-for="(item, index) in navItems" :key="index">
+          <template v-if="item.type === 'link'">
+            <li>
+              <router-link :to="item.link" @click="isMobileMenuOpen = false">
+                <p class="button color-primary">{{ item.text }}</p>
+              </router-link>
+            </li>
+          </template>
+        </template>
       </ul>
     </transition>
 
   </nav>
-
 </template>
 
 <script>
@@ -68,6 +55,32 @@ import {defineComponent, ref, watch} from "vue";
 export default defineComponent({
   name: 'NavBar',
   setup() {
+
+    const navItems = [
+      {
+        type: "link",
+        link: "/speciality",
+        text: "SPECIALTY",
+      },
+      {
+        type: "link",
+        link: "/advantages",
+        text: "ADVANTAGES",
+      },
+      {
+        type: "logo", // This will include the logo for the desktop navbar
+      },
+      {
+        type: "link",
+        link: "/services",
+        text: "SERVICES",
+      },
+      {
+        type: "link",
+        link: "/projects",
+        text: "PROJECTS",
+      },
+    ];
 
     const navBarMobileRef = ref(null);
 
@@ -100,7 +113,8 @@ export default defineComponent({
     return {
       isMobileMenuOpen,
       toggleMobileMenu,
-      navBarMobileRef
+      navBarMobileRef,
+      navItems
     }
   }
 
@@ -125,31 +139,20 @@ export default defineComponent({
 }
 
 .navbar-desktop ul {
-  max-width: 1080px;
+  max-width: 1088px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr auto 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.8fr 1fr 1fr;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  gap: 10px;
-}
-
-.navbar-desktop ul li a {
-  color: var(--color-primary, #232323);
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
 }
 
 .logo-desktop {
   width: 100%;
   max-width: 155px;
   height: 60px;
-  margin: 0 70px;
 }
 
 .logo-mobile {
@@ -188,31 +191,16 @@ export default defineComponent({
   padding: 35px 0 40px;
 }
 
-.list-mobile li a {
-  color: var(--color-primary, #232323);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
-  text-align: center;
-}
+@media screen and (max-width: 1250px) {
 
-@media screen and (max-width: 1200px) {
-  .logo-desktop {
-    margin: 0;
+  .navbar-desktop ul {
+    max-width: 87vw;
   }
 
   .navbar-desktop ul {
-    grid-template-columns: repeat(5, auto);
-    gap: 40px;
+    grid-template-columns: 1fr 1fr 1.3fr 1fr 1fr;
   }
-}
 
-@media screen and (max-width: 980px) {
-  .navbar-desktop ul {
-    gap: 20px;
-  }
 }
 
 @media screen and (max-width: 920px) {

@@ -1,7 +1,9 @@
 <template>
-  <div class="hr-wrapper container">
-    <hr>
-    <hr>
+  <div class="container">
+    <div class="hr-wrapper">
+      <hr>
+      <hr>
+    </div>
   </div>
 </template>
 
@@ -23,19 +25,20 @@ export default defineComponent({
 <style scoped>
 
 .hr-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   pointer-events: none;
+
+  max-width: 1680px;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .hr-wrapper hr {
   background: linear-gradient(225deg, rgba(35, 35, 35, 0.00) 0%, #232323 100%);
   transform: rotate(180deg);
-  height: 60%;
+  height: 90vh;
   width: 1px;
   position: absolute;
   z-index: 12;
@@ -43,21 +46,19 @@ export default defineComponent({
 }
 
 .hr-wrapper hr:first-child {
-  left: 45px;
+  left: 0;
 }
 
 .hr-wrapper hr:last-child {
-  right: 45px;
+  right: 0;
 }
 
 @media screen and (max-width: 920px) {
-  .hr-wrapper hr:first-child {
-    left: 16px;
+
+  .hr-wrapper hr {
+    height: 70vh;
   }
 
-  .hr-wrapper hr:last-child {
-    right: 16px;
-  }
 }
 
 </style>

@@ -33,14 +33,15 @@ export default defineComponent({
 }
 
 .footer-inner {
-  padding: 75px 90px;
-  max-width: 1500px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 @media screen and (max-width: 920px) {
 
   .footer-inner {
-    padding: 40px 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
 }

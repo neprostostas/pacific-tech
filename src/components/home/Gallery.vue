@@ -108,26 +108,6 @@ export default defineComponent({
   position: relative;
 }
 
-.project-link .text-block h3,
-.project-link .text-block p {
-  transition: .3s all ease-in-out;
-}
-
-.project-link:hover .text-block h3 {
-  font-size: 60px;
-  transition: .3s all ease-in-out;
-}
-
-.project-link:hover .text-block p {
-  font-size: 30px;
-  transition: .3s all ease-in-out;
-}
-
-.project-link:hover .overlay-shadow {
-  transition: .3s all ease-in-out;
-  opacity: 0.6;
-}
-
 .overlay-shadow {
   position: absolute;
   top: 0;
@@ -169,16 +149,6 @@ export default defineComponent({
     display: none;
   }
 
-}
-
-@media screen and (max-width: 600px) {
-  .project-link:hover .text-block h3 {
-    font-size: 35px;
-  }
-
-  .project-link:hover .text-block p {
-    font-size: 25px;
-  }
 }
 
 </style>

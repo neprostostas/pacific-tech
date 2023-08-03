@@ -1,5 +1,5 @@
 <template>
-  <div class="container-padding advantages">
+  <div class="container advantages">
 
     <div class="top-block">
       <div class="left-part">
@@ -92,9 +92,8 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 }
 
 .bottom-wrap {
-  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: auto 1fr auto;
   gap: 20px;
 }
 
@@ -112,7 +111,6 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
   border-bottom: var(--color-separator, rgba(35, 35, 35, 0.60)) 1px solid;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
 }
 
 .block {
@@ -121,6 +119,11 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
   align-items: center;
   gap: 10px;
   border-right: var(--color-separator, rgba(35, 35, 35, 0.60)) 1px solid;
+  padding-left: 20px;
+}
+
+.block:first-of-type {
+  padding-left: 0;
 }
 
 .block img {
@@ -139,11 +142,10 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
 
 .top-block {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   align-items: start;
   justify-content: space-between;
-  gap: 50px;
-  padding: 0 20px 100px;
+  padding: 0 0 100px;
 }
 
 .bottom-block hr {
@@ -186,6 +188,7 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
   }
 
   .bottom-block hr {
+    margin: 20px 0;
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 2;
@@ -214,17 +217,9 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
     border-right: none;
   }
 
-  .bottom-wrap {
-   grid-template-columns: auto 1fr auto;
-  }
-
 }
 
 @media screen and (max-width: 1180px) {
-
-.bottom-wrap {
-  padding: 0;
-}
 
 .top-block {
   grid-template-columns: auto;
@@ -249,6 +244,10 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
     grid-template-columns: auto;
     display: grid;
     justify-items: center;
+  }
+
+  .bottom-block .block {
+    margin-bottom: 20px;
   }
 
   .bottom-block .block:nth-child(1) {
@@ -281,6 +280,7 @@ div.bottom-wrap > div > div:nth-child(5) > .text-part {
     grid-column-end: unset;
     grid-row-start: unset;
     grid-row-end: unset;
+    margin-bottom: 0;
   }
 
   .block {

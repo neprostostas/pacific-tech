@@ -1,5 +1,5 @@
 <template>
-  <div class="container-padding services">
+  <div class="container services">
 
     <div class="top-block">
       <div class="left-part">
@@ -10,7 +10,6 @@
         <FAQComponent :faq="FAQ_data"/>
       </div>
     </div>
-
 
   </div>
 </template>
@@ -172,8 +171,6 @@ export default defineComponent({
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
-  gap: 30px;
-  padding: 0 20px 0;
 }
 
 .services {
@@ -200,10 +197,6 @@ export default defineComponent({
 
   .services {
     margin-bottom: 85px;
-  }
-
-  .top-block {
-    padding: 0;
   }
 
 }
@@ -235,20 +228,8 @@ export default defineComponent({
     align-items: unset;
   }
 
-}
-
-@media screen and (max-width: 495px) {
-
-  .pl-225 {
-    padding-left: 90px;
-  }
-
-}
-
-@media screen and (max-width: 435px) {
-
-  .pl-225 {
-    padding-left: 30px;
+  .left-part {
+    padding-bottom: 40px;
   }
 
 }

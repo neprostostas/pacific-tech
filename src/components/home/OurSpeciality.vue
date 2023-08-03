@@ -1,5 +1,5 @@
 <template>
-  <div class="container-padding speciality">
+  <div class="container speciality">
 
     <div class="top-block">
       <div class="left-part">
@@ -14,42 +14,24 @@
     <div class="bottom-wrap desktop">
       <hr>
       <div class="bottom-block" :style="{'grid-template-columns': bottomBlockColumns }">
-        <div class="block" @mouseover="onHover(1)" :style="{'gap': gap1 }">
-          <transition name="fade">
-            <img
-                v-if="hoveredBlock === 1"
-                src="@/assets/img/home/home-slide1.png"
-                alt="home-slide1"
-            />
-          </transition>
+        <div class="block" @mouseover="onHover(1)" :style="{'grid-template-columns': block1, 'padding': padding1 }">
+          <img :class="{ active: hoveredBlock === 1 }" src="@/assets/img/home/home-slide1.png" alt="home-slide1" />
           <div class="text-part">
             <h2 class="heading-2 color-primary">Web Development</h2>
             <p class="color-primary">Unleash the true potential of your online presence with our bespoke web development services. Our talented team crafts visually captivating, user-friendly, and fully optimized websites that not only reflect your brand identity but also drive tangible results.</p>
           </div>
         </div>
 
-        <div class="block" @mouseover="onHover(2)" :style="{'gap': gap2 }">
-          <transition name="fade">
-            <img
-                v-if="hoveredBlock === 2"
-                src="@/assets/img/home/home-slide2.png"
-                alt="home-slide2"
-            />
-          </transition>
+        <div class="block" @mouseover="onHover(2)" :style="{'grid-template-columns': block2, 'padding': padding2 }">
+          <img :class="{ active: hoveredBlock === 2 }" src="@/assets/img/home/home-slide2.png" alt="home-slide2" />
           <div class="text-part">
             <h2 class="heading-2 color-primary">Mobile App Creation</h2>
             <p class="color-primary">In the era of mobile-first experiences, we deliver top-of-the-line mobile app solutions that captivate users and elevate your business to new heights. Our mobile app development expertise spans across diverse platforms, ensuring seamless functionality and exceptional user engagement.</p>
           </div>
         </div>
 
-        <div class="block" @mouseover="onHover(3)" :style="{'gap': gap3 }">
-          <transition name="fade">
-            <img
-                v-if="hoveredBlock === 3"
-                src="@/assets/img/home/home-slide3.png"
-                alt="home-slide3"
-            />
-          </transition>
+        <div class="block" @mouseover="onHover(3)" :style="{'grid-template-columns': block3, 'padding': padding3 }">
+          <img :class="{ active: hoveredBlock === 3 }" src="@/assets/img/home/home-slide3.png" alt="home-slide3" />
           <div class="text-part">
             <h2 class="heading-2 color-primary">Tech Support & Database Warehouse</h2>
             <p class="color-primary">Keep your systems running like clockwork with our reliable tech support services. We offer timely assistance and maintenance to ensure that your tech infrastructure stays robust and efficient. Additionally, our secure database warehouse solutions provide a seamless data management experience, empowering you to make data-driven decisions with confidence.</p>
@@ -58,6 +40,7 @@
       </div>
       <hr>
     </div>
+
     <div class="bottom-wrap mobile">
       <hr>
       <div class="bottom-block">
@@ -99,28 +82,40 @@ export default defineComponent({
   setup() {
     const hoveredBlock = ref(1);
     const bottomBlockColumns = ref("2fr 1fr 1fr");
-    const gap1 = ref("20px");
-    const gap2 = ref("0");
-    const gap3 = ref("0");
+    const block1 = ref("auto 1fr");
+    const block2 = ref("auto");
+    const block3 = ref("auto");
+    const padding1 = ref("0 40px 0 0");
+    const padding2 = ref("0 40px 0");
+    const padding3 = ref("0 0 0 40px");
 
     const changeLayout = (blockNumber) => {
       if (blockNumber === 1) {
         bottomBlockColumns.value = "2fr 1fr 1fr";
-        gap1.value = "20px";
-        gap2.value = "0";
-        gap3.value = "0";
+        block1.value = "auto 1fr";
+        block2.value = "auto";
+        block3.value = "auto";
+        padding1.value = "0 40px 0 0";
+        padding2.value = "0 40px 0";
+        padding3.value = "0 0 0 40px";
       }
       else if (blockNumber === 2) {
         bottomBlockColumns.value = "1fr 2fr 1fr";
-        gap1.value = "0";
-        gap2.value = "20px";
-        gap3.value = "0";
+        block1.value = "auto";
+        block2.value = "auto 1fr";
+        block3.value = "auto";
+        padding1.value = "0 40px 0 20px";
+        padding2.value = "0 40px 0";
+        padding3.value = "0 40px 0";
       }
       else if (blockNumber === 3) {
         bottomBlockColumns.value = "1fr 1fr 2fr";
-        gap1.value = "0";
-        gap2.value = "0";
-        gap3.value = "20px";
+        block1.value = "auto";
+        block2.value = "auto";
+        block3.value = "auto 1fr";
+        padding1.value = "0 40px 0 20px";
+        padding2.value = "0 40px 0";
+        padding3.value = "0 40px 0";
       }
     }
 
@@ -133,9 +128,12 @@ export default defineComponent({
       hoveredBlock,
       bottomBlockColumns,
       onHover,
-      gap1,
-      gap2,
-      gap3
+      block1,
+      block2,
+      block3,
+      padding1,
+      padding2,
+      padding3
     };
   },
 });
@@ -152,16 +150,14 @@ export default defineComponent({
 }
 
 .bottom-wrap.desktop .block :is(h2, p) {
-  width: 315px;
+  width: 335px;
 }
 
-.text-part {
-  margin-right: 20px;
+.bottom-wrap.desktop .text-part {
   height: 347px;
   display: grid;
   grid-template-rows: 125px 1fr;
   align-items: center;
-  overflow: scroll;
 }
 
 div.bottom-wrap > div > div:nth-child(3) > .text-part {
@@ -169,18 +165,23 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 }
 
 .bottom-wrap.desktop {
-  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 20px;
+  grid-template-columns: auto 1fr auto;
 }
 
 .bottom-wrap hr {
-  border: none;
-  border-right: var(--color-separator, rgba(35, 35, 35, 0.60)) 1px solid;
+  background-color: var(--color-separator, rgba(35, 35, 35, 0.60));
   width: 1px;
   height: calc(100% - 40px);
   margin: 20px 0;
+}
+
+.bottom-wrap hr:first-of-type {
+  margin-right: 20px;
+}
+
+.bottom-wrap hr:last-of-type {
+  margin-left: 20px;
 }
 
 .bottom-block {
@@ -190,24 +191,33 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 20px;
 
-  transition: grid-template-columns ease-in-out .5s;
+  transition: .4s all ease-in-out;
 }
 
 .block {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  align-items: center;
+  grid-template-columns: auto 1fr;
+  align-items: start;
   gap: 40px;
   border-right: var(--color-separator, rgba(35, 35, 35, 0.60)) 1px solid;
+  transition: .4s all ease-in-out;
 }
 
-.block img {
+.bottom-wrap.desktop .block img {
+  max-width: 350px;
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
+  display: none;
+  opacity: 0;
+}
+
+.bottom-wrap.desktop .block img.active {
+  display: unset;
+  opacity: 1;
+  transition: .4s all ease-in-out;
 }
 
 .block:nth-child(3) {
@@ -221,11 +231,10 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
 .top-block {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   align-items: start;
   justify-content: space-between;
-  gap: 50px;
-  padding: 0 20px 100px;
+  padding: 0 0 100px;
 }
 
 .speciality {
@@ -240,22 +249,25 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
 .bottom-wrap.mobile .bottom-block {
   grid-template-columns: auto;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .bottom-wrap.mobile .block {
   grid-template-columns: auto;
   gap: 25px;
-  padding: 0 0 20px;
+  padding: 20px 0;
   border-left: none;
   border-right: none;
   border-top: none;
   border-bottom: var(--color-separator, rgba(35, 35, 35, 0.60)) 1px solid;
 }
 
+.bottom-wrap.mobile .block:first-of-type {
+  padding-top: 0;
+}
+
 .bottom-wrap.mobile .block h2 {
   padding-top: 0;
+  padding-bottom: 25px;
 }
 
 .bottom-wrap.mobile .block p {
@@ -266,7 +278,6 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
   margin-right: 0;
   height: unset;
   overflow: auto;
-  grid-template-rows: 95px 1fr;
 }
 
 .bottom-wrap.mobile .block:nth-child(3) {
@@ -274,29 +285,27 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 }
 
 .bottom-wrap.mobile .block img {
-  height: unset;
+  height: 100%;
+  width: 100%;
 }
 
-/* Fade-in animation */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s;
-}
+@media screen and (max-width: 1825px) {
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
+  .bottom-wrap.desktop .block :is(h2, p) {
+    width: 300px;
+  }
 
-@media screen and (max-width: 1675px) {
+  .bottom-wrap.desktop .text-part {
+    height: 100%;
+  }
 
   .bottom-wrap.desktop .block:nth-child(3) h2 {
-      font-size: 25px;
+    font-size: 25px;
   }
 
 }
 
-@media screen and (max-width: 1620px) {
+@media screen and (max-width: 1680px) {
 
   .bottom-wrap.desktop .block:is(:nth-child(1), :nth-child(2)) h2 {
     max-width: 170px;
@@ -313,10 +322,18 @@ div.bottom-wrap > div > div:nth-child(3) > .text-part {
 
 }
 
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1635px) {
 
-  .bottom-wrap.desktop .block:nth-child(3) h2 {
-    font-size: 28px;
+  .bottom-wrap.desktop .block :is(h2, p) {
+    width: 250px;
+  }
+
+}
+
+@media screen and (max-width: 1600px) {
+
+  .bottom-wrap.desktop .block :is(h2, p) {
+    width: 200px;
   }
 
 }

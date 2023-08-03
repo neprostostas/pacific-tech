@@ -6,16 +6,24 @@
     </router-link>
     <ul class="nav-part">
       <li>
-        <router-link to="/speciality">SPECIALTY</router-link>
+        <router-link to="/speciality">
+          <p class="button color-white">SPECIALTY</p>
+        </router-link>
       </li>
       <li>
-        <router-link to="/advantages">ADVANTAGES</router-link>
+        <router-link to="/advantages">
+          <p class="button color-white">ADVANTAGES</p>
+        </router-link>
       </li>
       <li>
-        <router-link to="/services">SERVICES</router-link>
+        <router-link to="/services">
+          <p class="button color-white">SERVICES</p>
+        </router-link>
       </li>
       <li>
-        <router-link to="/projects">PROJECTS</router-link>
+        <router-link to="/projects">
+          <p class="button color-white">PROJECTS</p>
+        </router-link>
       </li>
     </ul>
   </nav>
@@ -40,11 +48,8 @@ export default defineComponent({
 <style scoped>
 
 .navbar-desktop-footer {
-  width: 100%;
-  max-width: 1235px;
-
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   gap: 20px;
 }
@@ -52,54 +57,47 @@ export default defineComponent({
 .nav-part {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  justify-items: start;
-  justify-content: start;
-  gap: 100px;
-}
-
-.nav-part li a {
-  color: var(--color-white, #E8E8E8);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
+  align-items: center;
+  gap: min(5.2vw, 100px);
 }
 
 .logo-desktop-footer {
   width: 100%;
   max-width: 120px;
-  height: 61px;
+  max-height: 61px;
+  height: 100%;
 }
 
-@media screen and (max-width: 1200px) {
-
+@media screen and (max-width: 1180px) {
   .navbar-desktop-footer {
-    justify-content: stretch;
+    grid-template-columns: 1fr 3fr;
   }
+}
 
+@media screen and (max-width: 1000px) {
   .nav-part {
-    justify-items: unset;
-    justify-content: unset;
-    grid-template-columns: repeat(2, auto);
-    gap: 15px 20px;
+    gap: 10px;
   }
-
 }
 
 @media screen and (max-width: 920px) {
 
-  .navbar-desktop-footer {
-    justify-content: space-between;
+  p.button {
+    font-size: 14px;
   }
 
-  .nav-part li a {
-    font-size: 14px;
+  .navbar-desktop-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-part {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px 20px;
   }
 
   .logo-desktop-footer {
     max-width: 90px;
-    height: 45px;
+    max-height: 45px;
   }
 
 }

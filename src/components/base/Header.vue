@@ -40,13 +40,13 @@ export default defineComponent({
 }
 
 .header-inner {
-  padding: 39px 20px 22px;
+  padding: 39px 0 22px;
 }
 
 @media screen and (max-width: 920px) {
 
   .header-inner {
-    padding: 16px 32px;
+    padding: 16px 8.534vw;
   }
 
 }
