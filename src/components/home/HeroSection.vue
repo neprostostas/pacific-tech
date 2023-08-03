@@ -2,7 +2,7 @@
 
   <div class="video-block">
 
-    <video class="video" playsinline autoplay loop muted src="@/assets/video/hero-video.webm" type="video/webm"></video>
+    <video class="video" playsinline autoplay loop muted src="@/assets/video/hero-video.mp4" type="video/mp4"></video>
     <div class="video-content">
       <h2 class="heading-2 color-white">Websites. E-commerce. Apps. Identica. Design Support.</h2>
       <button class="margin-auto">HIRE US</button>
