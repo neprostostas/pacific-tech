@@ -5,7 +5,7 @@
   <OurAdvantagesBlock />
   <OurServicesBlock />
   <OurProjectsBlock />
-<!--  <LetsTalkBlock />-->
+  <LetsTalkBlock />
 
 </template>
 
@@ -17,7 +17,7 @@ import OurSpecialityBlock from "@/components/home/OurSpeciality";
 import OurAdvantagesBlock from "@/components/home/OurAdvantages";
 import OurServicesBlock from "@/components/home/OurServices";
 import OurProjectsBlock from "@/components/home/OurProjects";
-// import LetsTalkBlock from "@/components/home/LetsTalkBlock";
+import LetsTalkBlock from "@/components/home/LetsTalkBlock";
 
 export default defineComponent({
   name: 'Home',
@@ -27,7 +27,7 @@ export default defineComponent({
     OurAdvantagesBlock,
     OurServicesBlock,
     OurProjectsBlock,
-    // LetsTalkBlock
+    LetsTalkBlock
   },
   setup() {
     useScrollToTop();
