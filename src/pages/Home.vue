@@ -5,7 +5,7 @@
   <OurAdvantagesBlock />
   <OurServicesBlock />
   <OurProjectsBlock />
-  <LetsTalkBlock />
+<!--  <LetsTalkBlock />-->
 
 </template>
 
