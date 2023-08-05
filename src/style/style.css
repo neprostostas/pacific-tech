@@ -94,6 +94,85 @@ a {
     text-decoration: unset;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* CHECKBOX */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--color-primary, #232323);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: relative;
+    right: -40px;
+    top: 41px;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(19.7151% 4.09995%, 19.3096% 3.69449%, 18.9042% 3.28902%, 18.4471% 2.95218%, 17.8832% 2.91065%, 17.3888% 3.18484%, 16.9834% 3.59037%, 16.578% 3.99589%, 16.1726% 4.40142%, 15.7672% 4.80695%, 15.3618% 5.21247%, 14.9565% 5.618%, 14.5511% 6.02353%, 14.1457% 6.42905%, 13.7403% 6.83458%, 13.3349% 7.24011%, 12.9295% 7.64564%, 12.5241% 8.05116%, 12.1187% 8.45669%, 11.7133% 8.86222%, 11.3079% 9.26774%, 10.9025% 9.67327%, 10.4972% 10.0788%, 10.0918% 10.4843%, 9.68638% 10.8899%, 9.28098% 11.2954%, 8.8756% 11.7009%, 8.4702% 12.1064%, 8.06481% 12.512%, 7.65942% 12.8591%, 7.25396% 12.4537%, 6.8485% 12.0482%, 6.44304% 11.6427%, 6.03758% 11.2373%, 5.63212% 10.8318%, 5.22667% 10.4264%, 4.82121% 10.0209%, 4.41575% 9.61545%, 4.01029% 9.20999%, 3.60483% 8.80453%, 3.19937% 8.39907%, 2.79391% 7.99361%, 2.35929% 7.62404%, 1.80348% 7.52053%, 1.28182% 7.73842%, 0.873081% 8.14037%, 0.467612% 8.54582%, 0.102022% 8.98333%, 0.00727303% 9.54071%, 0.233322% 10.0589%, 0.636315% 10.4667%, 1.04178% 10.8721%, 1.44724% 11.2776%, 1.8527% 11.683%, 2.25816% 12.0885%, 2.66363% 12.4939%, 3.06909% 12.8994%, 3.47455% 13.3049%, 3.88001% 13.7103%, 4.28548% 14.1158%, 4.69094% 14.5212%, 5.0964% 14.9267%, 5.50186% 15.3321%, 5.90732% 15.7376%, 6.31279% 16.143%, 6.71825% 16.5485%, 7.1351% 16.9411%, 7.67388% 17.1113%, 8.21573% 16.951%, 8.63412% 16.5603%, 9.03958% 16.1549%, 9.44504% 15.7494%, 9.8505% 15.344%, 10.256% 14.9385%, 10.6614% 14.533%, 11.0669% 14.1276%, 11.4723% 13.7221%, 11.8778% 13.3167%, 12.2833% 12.9112%, 12.6887% 12.5057%, 13.0942% 12.1003%, 13.4996% 11.6948%, 13.9051% 11.2894%, 14.3105% 10.8839%, 14.716% 10.4784%, 15.1215% 10.073%, 15.5269% 9.66753%, 15.9324% 9.26207%, 16.3378% 8.85662%, 16.7433% 8.45116%, 17.1488% 8.0457%, 17.5542% 7.64024%, 17.9597% 7.23478%, 18.3651% 6.82932%, 18.7706% 6.42386%, 19.1761% 6.01841%, 19.5815% 5.61295%, 19.9261% 5.16078%, 19.9815% 4.59826%, 19.7151% 4.09995%);
+    background-color: var(--color-primary, #232323);
+    transform: scale(0);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+}
+
+/* RADIO */
+input[type="radio"] {
+    cursor: pointer;
+
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: transparent;
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    stroke: var(--color-primary, #232323);
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-primary, #232323);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background: var(--gradient-blue);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
 button {
     border: 2px solid var(--color-white, #E8E8E8);
     border-radius: 40px;
@@ -106,13 +185,34 @@ button {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
-    transition: all ease-in-out 0.3s;
 }
 
 button:hover {
     border: 2px solid var(--color-white, #E8E8E8);
     color: var(--color-white, #E8E8E8);
     background: var(--gradient-blue, radial-gradient(135.78% 135.78% at -5.98% 11.82%, #000 0%, #142743 62.53%, #38618A 100%));
+}
+
+:is(input, textarea):not([type="radio"], [type="checkbox"], #filename) {
+    width: calc(100% - 100px);
+    border: none;
+    border-radius: 50px;
+    padding: 30px 50px;
+    opacity: 0.8;
+    background: var(--color-grey, #D9D9D9);
+    color: var(--color-primary, #232323);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+:is(input, textarea):not([type="radio"], [type="checkbox"], #filename)::placeholder {
+    color: var(--color-secondary, #576C80);
+}
+
+:is(input, textarea):focus {
+    outline: none;
 }
 
 .placeholder {
@@ -128,6 +228,14 @@ button:hover {
 .pl-225 {
     padding-left: 225px;
     padding-top: 15px;
+}
+
+.hr-gradient {
+    max-width: 1680px;
+    width: 100%;
+    height: 1px;
+    opacity: 0.6;
+    background: linear-gradient(225deg, rgba(0, 0, 0, 0.00) 0%, #000 50.90%, rgba(0, 0, 0, 0.00) 100%);
 }
 
 .pre-wrap {
@@ -241,6 +349,11 @@ p.text3 {
         background: var(--color-primary, #232323);
         border: 2px solid var(--color-primary, #232323);
         color: var(--color-white, #E8E8E8);
+    }
+
+    :is(input, textarea):not([type="radio"], [type="checkbox"], #filename) {
+        width: calc(100% - 30px);
+        padding: 20px 15px;
     }
 
 }

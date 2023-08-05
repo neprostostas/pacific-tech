@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="hr-wrapper">
+    <div class="hr-wrapper" ref="hrWrapper">
       <hr>
       <hr>
     </div>
@@ -8,14 +8,26 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref, watch } from "vue";
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   name: 'HrLines',
   setup() {
 
-    return {
+    const hrWrapper = ref(null);
+    const route = useRoute();
 
+    watch(route, (to) => {
+      if (to.path === '/lets-talk') {
+        hrWrapper.value.classList.add('lets-talk');
+      } else {
+        hrWrapper.value.classList.remove('lets-talk');
+      }
+    });
+
+    return {
+      hrWrapper
     }
   }
 
@@ -45,6 +57,12 @@ export default defineComponent({
   top: -200px;
 }
 
+.hr-wrapper.lets-talk hr {
+  height: 65vh;
+  min-height: 399px;
+  max-height: 575px;
+}
+
 .hr-wrapper hr:first-child {
   left: 0;
 }
@@ -53,10 +71,24 @@ export default defineComponent({
   right: 0;
 }
 
+@media screen and (max-width: 1350px) {
+
+  .hr-wrapper.lets-talk hr {
+    height: 55vh;
+    max-height: 500px;
+  }
+
+}
+
 @media screen and (max-width: 920px) {
 
   .hr-wrapper hr {
     height: 70vh;
+  }
+
+  .hr-wrapper.lets-talk hr {
+    height: 62vh;
+    max-height: 400px;
   }
 
 }

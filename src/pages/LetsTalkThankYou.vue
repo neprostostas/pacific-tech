@@ -1,6 +1,6 @@
 <template>
   <LetsTalkLayout>
-    <Form />
+    <ThankYou />
   </LetsTalkLayout>
 </template>
 
@@ -8,13 +8,13 @@
 import { defineComponent } from "vue"
 import useScrollToTop from "@/js/helpers/UseScrollToTop";
 import LetsTalkLayout from "@/components/lets_talk/LetsTalkLayout";
-import Form from "@/components/lets_talk/Form";
+import ThankYou from "@/components/lets_talk/ThankYou";
 
 export default defineComponent({
   name: 'LetsTalk',
   components: {
     LetsTalkLayout,
-    Form
+    ThankYou
   },
   setup() {
     useScrollToTop();

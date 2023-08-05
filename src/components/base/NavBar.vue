@@ -134,6 +134,14 @@ export default defineComponent({
   transform: translateY(-10px);
 }
 
+:is(.navbar-desktop, .navbar-mobile) a:hover {
+  text-decoration: none;
+}
+
+:is(.navbar-desktop, .navbar-mobile) a:hover p {
+  color: var(--color-separator, #23232399)!important;
+}
+
 .nav-trigger {
   cursor: pointer;
 }

@@ -3,7 +3,8 @@
     <HrLines />
     <CustomHeader/>
     <main>
-        <router-view />
+        <router-view v-if="isOnline"/>
+        <OfflinePage v-else/>
     </main>
     <CustomFooter/>
   </div>
@@ -13,7 +14,8 @@
 import CustomHeader from '@/components/base/Header'
 import CustomFooter from '@/components/base/Footer'
 import HrLines from "@/components/base/HrLines";
-import { defineComponent } from "vue";
+import OfflinePage from "@/pages/OfflinePage";
+import { defineComponent, ref, onMounted, onUnmounted } from "vue";
 
 export default defineComponent({
   name: 'MainLayout',
@@ -21,11 +23,28 @@ export default defineComponent({
     CustomHeader,
     CustomFooter,
     HrLines,
+    OfflinePage
   },
   setup() {
 
-    return {
+    const isOnline = ref(navigator.onLine);
 
+    const updateOnlineStatus = () => {
+      isOnline.value = navigator.onLine;
+    };
+
+    onMounted(() => {
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    });
+
+    return {
+      isOnline
     }
   }
 
